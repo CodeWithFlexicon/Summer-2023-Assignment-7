@@ -18,6 +18,6 @@ function theDuplicateFinder(nums) {
   return nums[nums.length - 1];
 }
 
-console.log(theDuplicateFinder([1, 3, 7, 2, 5, 4, 6, 3]));
+//console.log(theDuplicateFinder([1, 3, 7, 2, 5, 4, 6, 3]));
 
 module.exports = theDuplicateFinder;

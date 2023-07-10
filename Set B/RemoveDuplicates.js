@@ -15,7 +15,7 @@ function removeDuplicates(nums) {
     }
   }
 
-  console.log(nums);
+  //console.log(nums);
 
   //Using another loop, we can check if the numbers are in their respective indexes
   //If they are not, we can replace the values with null
@@ -48,6 +48,6 @@ function removeDuplicates(nums) {
 }
 
 //console.log(removeDuplicates([1, 3, 7, 2, 5, 4, 6, 3]));
-console.log(removeDuplicates([1, 2, 2, 3, 3, 3, 5, 5, 5, 5, 7, 7, 7]));
+//console.log(removeDuplicates([1, 2, 2, 3, 3, 3, 5, 5, 5, 5, 7, 7, 7]));
 
 module.exports = removeDuplicates;
