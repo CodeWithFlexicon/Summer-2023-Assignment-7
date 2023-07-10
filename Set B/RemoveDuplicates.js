@@ -15,17 +15,39 @@ function removeDuplicates(nums) {
     }
   }
 
-  //Using another loop we can start from the end and remove all numbers that are not in its rightful place
-  for (let i = nums.length - 1; i > 0; i--) {
+  console.log(nums);
+
+  //Using another loop, we can check if the numbers are in their respective indexes
+  //If they are not, we can replace the values with null
+  //If they are in their respective spots, we can move them to the front
+  //Set a variable to find an index that does not have the correct number
+  let uniqueIndex = 0;
+  for (let i = 0; i < nums.length; i++) {
     if (nums[i] !== i + 1) {
-      delete nums[i];
-      nums.length--;
+      nums[i] = null; // Mark duplicates with null
+    } else {
+      if (i !== uniqueIndex) {
+        /*         
+        console.log("Curr Array: ", nums);
+        console.log(
+          "Curr Num: ",
+          nums[i],
+          "Unique Index Num: ",
+          nums[uniqueIndex]
+        ); */
+        [nums[i], nums[uniqueIndex]] = [nums[uniqueIndex], nums[i]]; // Move unique numbers to the index where there was an incorrect value
+      }
+      uniqueIndex++;
     }
   }
 
-  return nums;
+  //Set the length of the array to the last index where we moved the unique number
+  nums.length = uniqueIndex;
+
+  return nums.length;
 }
 
 //console.log(removeDuplicates([1, 3, 7, 2, 5, 4, 6, 3]));
+console.log(removeDuplicates([1, 2, 2, 3, 3, 3, 5, 5, 5, 5, 7, 7, 7]));
 
 module.exports = removeDuplicates;
